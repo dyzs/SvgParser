@@ -1,0 +1,114 @@
+package com.dyzs.svgparser.lib
+
+import android.graphics.Path
+import androidx.core.graphics.PathParser
+import androidx.core.graphics.PathParser.PathDataNode
+/**
+ * author : cbk
+ * date   : 2023/3/7
+ * desc   :
+ */
+class SvgElementPath {
+
+    private var name = "p1"
+    private var fillColor = "#00000000"
+    private var pathData =
+        "M483,381L483,377L482,378L480,374L484,372L483,369L486,366L487,367L490,364L492,364L492,362L495,363L497,361L498,364L504,364L509,356L514,357L517,354L518,355L518,353L524,351L527,348L534,346L534,339L537,336L536,335L539,334L539,330L536,323L536,317L532,315L532,313L545,309L553,311L554,310L551,307L551,305L557,287L564,290L573,291L577,289L579,287L577,276L581,272L583,273L586,271L588,267L587,266L589,264L595,264L597,271L602,273L604,277L610,277L611,280L614,279L614,281L617,283L619,290L621,290L622,293L622,296L620,298L621,301L619,304L620,311L621,310L624,312L625,311L631,313L641,313L652,321L657,321L656,324L658,324L659,329L665,338L671,337L690,340L706,340L713,345L714,344L719,347L729,348L730,350L734,351L737,348L754,341L764,342L775,339L783,331L787,330L790,327L786,321L787,316L790,312L803,316L807,314L812,308L819,308L825,303L824,302L829,297L833,297L834,294L838,295L840,293L845,292L847,294L854,293L853,288L843,278L838,277L834,281L825,279L822,282L819,279L819,277L821,275L828,255L836,259L843,254L849,252L850,249L848,249L848,247L853,240L855,232L858,229L860,229L861,226L860,221L858,219L855,220L855,218L863,210L864,211L880,207L884,207L888,210L889,209L891,212L894,213L900,213L900,216L902,216L903,220L906,222L905,225L907,226L906,227L909,232L908,233L910,234L910,240L913,243L914,250L916,250L915,255L918,259L925,258L925,260L931,260L931,262L933,262L937,267L941,267L939,270L942,274L940,276L944,282L955,281L960,276L962,277L969,273L976,273L973,274L972,279L974,281L968,287L969,288L966,295L967,298L960,311L957,312L950,309L948,311L949,312L943,314L946,324L946,330L944,336L939,338L940,341L937,338L937,336L934,335L933,340L931,342L930,341L927,346L919,346L922,351L920,353L913,352L911,350L912,349L910,349L911,348L908,349L903,358L896,361L890,366M523,448L520,445L520,443L523,440L525,444L527,442L527,438L522,432L522,428L525,425L519,421L517,413L512,414L505,411L505,409L502,410L500,407L501,404L498,401L496,401L496,399L488,397L490,395L492,396M749,538L747,538L748,535L746,535L748,531L746,529L741,530L737,526L735,526L733,530L728,530L725,533L723,531L721,531L718,534L715,531L713,531L712,534L707,533L707,545L703,544L703,540L695,542L695,540L693,540L692,537L688,537L688,531L690,529L685,527L685,523L683,521L685,519L679,519L675,521L674,520L676,518L674,516L676,512L675,511L683,503L682,502L684,498L684,490L681,487L681,489L679,487L679,483L675,481L675,479L673,481L674,482L672,482L673,485L670,487L663,482L659,482L656,483L656,485L653,487L648,488L642,494L638,495L630,495L630,489L626,489L625,484L620,485L611,482L607,486L605,491L603,489L604,484L602,483L600,485L595,486L591,486L586,483L584,485L582,483L582,485L578,481L575,482L574,478L571,479L566,474L566,472L562,474L557,469L555,469L555,467L554,468L553,466L551,466L550,463L545,462L543,466L529,456L526,457L523,454L523,448M758,542L753,541L749,538M761,671L760,662M769,587L772,591L773,596M777,620L775,628M789,692L797,689M819,661L824,655M843,631L846,622M847,589L847,598M855,564L850,572M870,540L864,548M875,525L877,515"
+    private var strokeWidth = "2"
+    private var strokeColor = "#201920"
+    private var strokeLineCap = "round"
+    private var strokeLineJoin = "round"
+    private var fillAlpha = "0"
+    private var fillType = "evenOdd"
+    private var strokeAlpha = "0"
+
+
+    fun getName(): String? {
+        return name
+    }
+
+    fun setName(name: String?) {
+        this.name = name!!
+    }
+
+    fun getFillColor(): String? {
+        return fillColor
+    }
+
+    fun setFillColor(fillColor: String?) {
+        this.fillColor = fillColor!!
+    }
+
+    fun getPathData(): String? {
+        return pathData
+    }
+
+    fun setPathData(pathData: String?) {
+        this.pathData = pathData!!
+    }
+
+    fun getStrokeWidth(): String? {
+        return strokeWidth
+    }
+
+    fun setStrokeWidth(strokeWidth: String?) {
+        this.strokeWidth = strokeWidth!!
+    }
+
+    fun getStrokeColor(): String? {
+        return strokeColor
+    }
+
+    fun setStrokeColor(strokeColor: String?) {
+        this.strokeColor = strokeColor!!
+    }
+
+    fun getStrokeLineCap(): String? {
+        return strokeLineCap
+    }
+
+    fun setStrokeLineCap(strokeLineCap: String?) {
+        this.strokeLineCap = strokeLineCap!!
+    }
+
+    fun getStrokeLineJoin(): String? {
+        return strokeLineJoin
+    }
+
+    fun setStrokeLineJoin(strokeLineJoin: String?) {
+        this.strokeLineJoin = strokeLineJoin!!
+    }
+
+    fun getFillAlpha(): String? {
+        return fillAlpha
+    }
+
+    fun setFillAlpha(fillAlpha: String?) {
+        this.fillAlpha = fillAlpha!!
+    }
+
+    fun getFillType(): String? {
+        return fillType
+    }
+
+    fun setFillType(fillType: String?) {
+        this.fillType = fillType!!
+    }
+
+    fun getStrokeAlpha(): String? {
+        return strokeAlpha
+    }
+
+    fun setStrokeAlpha(strokeAlpha: String?) {
+        this.strokeAlpha = strokeAlpha!!
+    }
+
+    fun parserPath(): Path? {
+        if (pathData != null) return PathParser.createPathFromPathData(pathData)
+        return null
+    }
+
+    fun parserPathDataNodes(): Array<PathDataNode?>? {
+        return if (pathData != null) PathParser.createNodesFromPathData(pathData) else null
+    }
+}
