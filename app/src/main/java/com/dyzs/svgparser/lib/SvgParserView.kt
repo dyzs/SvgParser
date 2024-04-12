@@ -30,31 +30,31 @@ import kotlin.math.abs
  * desc   :
  */
 class SvgParserView : View, SvgTouchController2.ConsumeListener {
-    var viewWidth = 0
-    var viewHeight = 0
-    var svgWidth = 0
-    var svgHeight = 0 // svg vector 宽高
-    var svgWidthScale = 1f // svg vector 与 view 的宽度比
-    var svgHeightScale = 1f // svg vector 与 view 的高度比
-    var svgMatrix = Matrix()
-    var svgRealWidth = 0
-    var svgRealHeight = 0 // 真实的 svg 图片显示宽高
-    var svgRealWidthScale = 1f
-    var svgRealHeightScale = 1f
-    var svgRealMatrix = Matrix()
-    var svgPaths: MutableList<Path?> = ArrayList()
-    var paint = Paint()
-    var vectorDrawable: VectorDrawable? = null
-    var regionList: List<Region> = ArrayList()
-    var svgElementVector: SvgElementVector? = null
-    var touchController: SvgTouchController2? = null
-    var svgInRect: Rect? = null
-    var svgTouchPath: Path? = null
-    var svgTouchPathPaint = Paint()
-    var svgZoomScale = 1f
-    val svgZoomScaleCenterPoint = Point()
-    val svgActionMatrix = Matrix()
-    val svgTranslatePoint = Point()
+    private var viewWidth = 0
+    private var viewHeight = 0
+    private var svgWidth = 0
+    private var svgHeight = 0 // svg vector 宽高
+    private var svgWidthScale = 1f // svg vector 与 view 的宽度比
+    private var svgHeightScale = 1f // svg vector 与 view 的高度比
+    private var svgMatrix = Matrix()
+    private var svgRealWidth = 0
+    private var svgRealHeight = 0 // 真实的 svg 图片显示宽高
+    private var svgRealWidthScale = 1f
+    private var svgRealHeightScale = 1f
+    private var svgRealMatrix = Matrix()
+    private var svgPaths: MutableList<Path?> = ArrayList()
+    private var paint = Paint()
+    private var vectorDrawable: VectorDrawable? = null
+    private var regionList: List<Region> = ArrayList()
+    private var svgElementVector: SvgElementVector? = null
+    private var touchController: SvgTouchController2? = null
+    private var svgInRect: Rect? = null
+    private var svgTouchPath: Path? = null
+    private var svgTouchPathPaint = Paint()
+    private var svgZoomScale = 1f
+    private val svgZoomScaleCenterPoint = Point()
+    private val svgActionMatrix = Matrix()
+    private val svgTranslatePoint = Point()
 
     constructor(context: Context?) : super(context) {
         initCreateSvg()
